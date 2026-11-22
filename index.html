@@ -114,9 +114,9 @@
       <div class="subrule"></div>
       <div class="section-title"><h2>추가 내역</h2><span class="hint">없으면 비워 두기</span></div>
       <div class="field-grid">
-        <label class="field"><span class="field-label">인원 추가 · 1</span><span class="input-holder"><input type="text" inputmode="numeric" data-key="people1" placeholder="—" autocomplete="off"><span class="unit">건</span></span></label>
+        <label class="field"><span class="field-label">인원 추가</span><span class="input-holder"><input type="text" inputmode="numeric" data-key="people1" placeholder="—" autocomplete="off"><span class="unit">건</span></span></label>
         <label class="field"><span class="field-label">수정 추가</span><span class="input-holder"><input type="text" inputmode="numeric" data-key="editExtra" placeholder="—" autocomplete="off"><span class="unit">건</span></span></label>
-        <label class="field"><span class="field-label">인원 추가 · 2</span><span class="input-holder"><input type="text" inputmode="numeric" data-key="people2" placeholder="—" autocomplete="off"><span class="unit">건</span></span></label>
+        <label class="field"><span class="field-label">인화 추가</span><span class="input-holder"><input type="text" inputmode="numeric" data-key="people2" placeholder="—" autocomplete="off"><span class="unit">건</span></span></label>
         <label class="field"><span class="field-label">시간 추가</span><span class="input-holder"><input type="text" inputmode="numeric" data-key="timeExtra" placeholder="—" autocomplete="off"><span class="unit">건</span></span></label>
       </div>
     </section>
@@ -175,7 +175,7 @@
         const total = num(data.card) + num(data.cash) + num(data.voucher) - num(data.refund);
         const count = k => data[k] === '' ? '' : money(num(data[k]));
         const note = data.note.trim() || '없음';
-        return `마감 정산\n\n${dateLabel(date)}\n\n- 매출보고\n\n카드 : ${money(num(data.card))}원\n현금 : ${money(num(data.cash))}원\n상품권 : ${money(num(data.voucher))}원\n\n환불 : ${money(num(data.refund))}원\n\n총 매출 : ${money(total)}원\n\n- 촬영내역\n\n증명사진 : ${count('idPhoto')}\n여권사진 : ${count('passport')}\n프로필사진 : ${count('profile')}\n이미지사진 : ${count('imagePhoto')}\n셀프사진 : ${count('selfPhoto')}\n\n—————————\n인원 추가 : ${count('people1')}\n수정 추가 : ${count('editExtra')}\n인원 추가 : ${count('people2')}\n시간 추가 : ${count('timeExtra')}\n\n- 특이사항\n\n${note}`;
+        return `마감 정산\n\n${dateLabel(date)}\n\n- 매출보고\n\n카드 : ${money(num(data.card))}원\n현금 : ${money(num(data.cash))}원\n상품권 : ${money(num(data.voucher))}원\n\n환불 : ${money(num(data.refund))}원\n\n총 매출 : ${money(total)}원\n\n- 촬영내역\n\n증명사진 : ${count('idPhoto')}\n여권사진 : ${count('passport')}\n프로필사진 : ${count('profile')}\n이미지사진 : ${count('imagePhoto')}\n셀프사진 : ${count('selfPhoto')}\n\n—————————\n인원 추가 : ${count('people1')}\n수정 추가 : ${count('editExtra')}\n인화 추가 : ${count('people2')}\n시간 추가 : ${count('timeExtra')}\n\n- 특이사항\n\n${note}`;
       };
       const render = () => {
         const total = num(data.card) + num(data.cash) + num(data.voucher) - num(data.refund);
